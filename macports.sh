@@ -9,6 +9,7 @@ PACKAGE_LIST=( \
     'git-core +bash_completion +doc' \
     'javascript-lint' \
     'lv +lesslikeslash' \
+    'nkf' \
     'pwgen' \
     'python24' \
     'python25' \
