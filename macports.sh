@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 # Install packages of your choice with MacPorts.
 
 PATH=/opt/local/bin:/usr/bin:/bin
@@ -7,6 +7,7 @@ PORT_COMMAND_PATH=/opt/local/bin/port
 PACKAGE_LIST=( \
     'elinks +col256 +lua' \
     'git-core +bash_completion +doc' \
+    'imagemagick +rsvg +gs +lcms +wmf +mpeg +jbig +jpeg2 +graphviz +hdri' \
     'javascript-lint' \
     'lv +lesslikeslash' \
     'nkf' \
@@ -14,7 +15,8 @@ PACKAGE_LIST=( \
     'python24' \
     'python25' \
     'python26' \
-    'py-lint'
+    'py-lint' \
+    'sox'
 )
 
 if [[ ! -x ${PORT_COMMAND_PATH} ]]; then
