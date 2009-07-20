@@ -8,6 +8,7 @@ PACKAGE_LIST=( \
     'elinks +col256 +lua' \
     'git-core +bash_completion +doc' \
     'javascript-lint' \
+    'lv +lesslikeslash' \
     'pwgen' \
     'python24' \
     'python25' \
