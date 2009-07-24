@@ -11,11 +11,13 @@ format_version() {
   # pre-release version, which is only used at stages prior to final."
   # cf. http://en.wikipedia.org/wiki/Software_versioning
 
-  local MAJOR_VER=$(sw_vers -productVersion | cut -d. -f1)
-  local MINOR_VER=$(sw_vers -productVersion | cut -d. -f2)
-  local BUG_VER=$(sw_vers -productVersion | cut -d. -f3)
+  NUM_OF_MACOSX_VERSION_TOKENS=3  # e.g. 10, 5 and 6 in 10.5.6
+  local version=''
+  for i in $(jot ${NUM_OF_MACOSX_VERSION_TOKENS} 1); do
+    version=${version}$(sw_vers -productVersion | cut -d. -f${i})
+  done
 
-  echo $(printf "%02d%1d%1d" ${MAJOR_VER} ${MINOR_VER} ${BUG_VER})
+  echo ${version}
 }
 
 ### Terminal.app
