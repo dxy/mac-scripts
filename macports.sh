@@ -6,11 +6,15 @@ PATH=/opt/local/bin:/usr/bin:/bin
 PORT_COMMAND_PATH=/opt/local/bin/port
 PACKAGE_LIST=( 
     'elinks +col256 +lua'
+    'gauche'
     'git-core +bash_completion +doc'
+    'guile'
     'imagemagick +rsvg +gs +lcms +wmf +mpeg +jbig +jpeg2 +graphviz +hdri'
     'javascript-lint'
     'lv +lesslikeslash'
     'memcached +threads'
+    'mit-scheme'
+    'ncftp'
     'nkf'
     'pwgen'
     'python24'
