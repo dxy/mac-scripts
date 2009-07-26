@@ -5,12 +5,15 @@ PATH=/opt/local/bin:/usr/bin:/bin
 
 PORT_COMMAND_PATH=/opt/local/bin/port
 PACKAGE_LIST=( 
-    'elinks +col256 +lua'
+    'elinks +col256'
+    'erlang +ssl'
     'gauche'
+    'ghc'
     'git-core +bash_completion +doc'
     'guile'
     'imagemagick +rsvg +gs +lcms +wmf +mpeg +jbig +jpeg2 +graphviz +hdri'
     'javascript-lint'
+    'lua'
     'lv +lesslikeslash'
     'memcached +threads'
     'mit-scheme'
@@ -24,6 +27,8 @@ PACKAGE_LIST=(
     'py26-pylibmc'
     'py26-twisted'
     'py-lint'
+    'ruby19 +c_api_docs'
+    'scala'
     'sox'
 )
 
