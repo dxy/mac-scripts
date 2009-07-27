@@ -23,6 +23,7 @@ PACKAGE_LIST=(
     'python24'
     'python25'
     'python26'
+    'python_select'
     'py26-memcached'
     'py26-pylibmc'
     'py26-twisted'
