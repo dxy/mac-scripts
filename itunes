@@ -1,0 +1,106 @@
+#!/bin/bash
+# iTunes Command Line Control
+# Originally written by David Schlosnagle
+# http://www.macosxhints.com/article.php?story=20011108211802830
+
+usage() {
+  echo "Usage: $(basename ${0}) <option>";
+  echo '';
+  echo 'Options:';
+  echo " status   = Shows iTunes' status, current artist and track.";
+  echo ' play     = Start playing iTunes.';
+  echo ' pause    = Pause iTunes.';
+  echo ' next     = Go to the next track.';
+  echo ' prev     = Go to the previous track.';
+  echo " mute     = Mute iTunes' volume.";
+  echo " unmute   = Unmute iTunes' volume.";
+  echo " vol up   = Increase iTunes' volume by 10%";
+  echo " vol down = Increase iTunes' volume by 10%";
+  echo " vol #    = Set iTunes' volume to # [0-100]";
+  echo ' stop     = Stop iTunes.';
+  echo ' quit     = Quit iTunes.';
+}
+
+talk_to_itunes() {
+  local statement_prefix='tell application "iTunes" '
+  local command=${1}
+  echo $(osascript -e "${statement_prefix} to ${command}")
+}
+
+if [[ ${#} -eq 0 ]];then
+  usage;
+fi
+
+if [[ ${#} -gt 0 ]];then
+  case ${1} in
+    'status')
+      state=$(talk_to_itunes 'player state as string')
+      echo "iTunes is currently ${state}."
+      if [ ${state} == 'playing' ]; then
+        artist=$(talk_to_itunes 'artist of current track as string')
+        track=$(talk_to_itunes 'name of current track as string')
+        echo "Current track: ${track} by ${artist}"
+      fi
+      ;;
+
+    'play')
+      echo 'Playing iTunes.'
+      talk_to_itunes 'play'
+      ;;
+
+    'pause')
+      echo 'Pausing iTunes.'
+      talk_to_itunes 'pause'
+      ;;
+
+    'next')
+      echo 'Going to next track.'
+      talk_to_itunes 'next track'
+      ;;
+
+    'prev')
+      echo 'Going to previous track.'
+      talk_to_itunes 'previous track'
+      ;;
+
+    'mute')
+      echo 'Muting iTunes volume level.'
+      talk_to_itunes 'set mute to true'
+      ;;
+
+    'unmute')
+      echo 'Unmuting iTunes volume level.'
+      talk_to_itunes 'set mute to false'
+      ;;
+
+    'vol')
+      echo 'Changing iTunes volume level.'
+      vol=$(talk_to_itunes 'sound volume as integer')
+      if [[ ${2} = 'up' ]]; then
+        newvol=$((vol + 10))
+      fi
+      if [[ ${2} = 'down' ]]; then
+        newvol=$((vol - 10))
+      fi
+      if [[ ${2} -gt 0 ]]; then
+        newvol=${2}
+      fi
+      talk_to_itunes "set sound volume to ${newvol}"
+      ;;
+
+    'stop')
+      echo 'Stopping iTunes.'
+      talk_to_itunes 'stop'
+      ;;
+
+    'quit')
+      echo 'Quitting iTunes.'
+      talk_to_itunes 'quit'
+      exit 1
+      ;;
+
+    *)
+      usage
+      ;;
+  esac
+fi
