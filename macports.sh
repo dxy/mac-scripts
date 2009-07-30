@@ -30,6 +30,7 @@ PACKAGE_LIST=(
     'ruby19 +c_api_docs'
     'scala'
     'sox'
+    'splint'
 )
 
 if [[ ! -x ${PORT_COMMAND_PATH} ]]; then
