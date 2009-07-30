@@ -3,7 +3,6 @@
 
 PATH=/opt/local/bin:/usr/bin:/bin
 
-PORT_COMMAND_PATH=/opt/local/bin/port
 PACKAGE_LIST=( 
     'elinks +col256'
     'erlang +ssl'
@@ -23,6 +22,7 @@ PACKAGE_LIST=(
     'python24'
     'python25'
     'python26'
+    'python_select'
     'py26-memcached'
     'py26-pylibmc'
     'py26-twisted'
@@ -33,8 +33,8 @@ PACKAGE_LIST=(
     'splint'
 )
 
-if [[ ! -x ${PORT_COMMAND_PATH} ]]; then
-  echo 'Unable to locate port command in default location.' 1>&2
+if [[ ! -x $(which port) ]]; then
+  echo 'Unable to locate port command.' 1>&2
   exit 1
 fi
 

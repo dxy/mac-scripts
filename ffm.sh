@@ -11,13 +11,7 @@ format_version() {
   # pre-release version, which is only used at stages prior to final."
   # cf. http://en.wikipedia.org/wiki/Software_versioning
 
-  NUM_OF_MACOSX_VERSION_TOKENS=3  # e.g. 10, 5 and 6 in 10.5.6
-  local version=''
-  for i in $(jot ${NUM_OF_MACOSX_VERSION_TOKENS} 1); do
-    version=${version}$(sw_vers -productVersion | cut -d. -f${i})
-  done
-
-  echo ${version}
+  echo $(sw_vers -productVersion | tr -d .)
 }
 
 ### Terminal.app
@@ -28,8 +22,7 @@ defaults write com.apple.Terminal FocusFollowsMouse -string YES
 # The following code for ffm on x11 is as much a reminder for myself as
 # anything. I haven't tested it since I don't really need it.
 
-FORMATTED_VER=$(format_version)
-if [[ ${FORMATTED_VER} -le 1055 ]]; then
+if [[ $(format_version) -le 1055 ]]; then
   # for version previous to 10.5.5
   defaults write com.apple.x11 wm_ffm true
 else
