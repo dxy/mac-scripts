@@ -15,6 +15,7 @@ PACKAGE_LIST=(
     'lua'
     'lv +lesslikeslash'
     'memcached +threads'
+    'mercurial +bash_completion'
     'mit-scheme'
     'ncftp'
     'nkf'
