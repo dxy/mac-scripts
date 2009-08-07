@@ -9,6 +9,7 @@ PACKAGE_LIST=(
     'gauche'
     'ghc'
     'git-core +bash_completion +doc'
+    'gnupg'
     'guile'
     'imagemagick +rsvg +gs +lcms +wmf +mpeg +jbig +jpeg2 +graphviz +hdri'
     'javascript-lint'
