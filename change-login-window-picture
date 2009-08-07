@@ -1,0 +1,25 @@
+#!/bin/bash
+# cf. http://www.mactricksandtips.com/2008/02/top-50-terminal-commands.html
+
+usage() {
+  echo "Usage: $(basename ${0}) imagefile"
+  exit 1
+}
+
+if [[ ${#} -eq 0 ]]; then
+  usage;
+fi
+
+if [[ ${EUID} -ne 0 ]]; then
+  echo 'This script must be run as root.' 1>&2
+  exit 1
+fi
+
+if [[ ! -r "${1}" ]]; then
+  echo "Image file not found." 1>&2
+  exit 1
+fi
+
+# TODO(dxy): check if the given file is an image.
+
+defaults write /Library/Preferences/com.apple.loginwindow DesktopPicture "${1}"

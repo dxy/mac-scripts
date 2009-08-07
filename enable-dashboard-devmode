@@ -1,0 +1,13 @@
+#!/bin/bash
+# To get a widget off of the Dashboard and onto your desktop, do the following: 
+# 1. Activate Dashboard by pressing F12 (or whatever key you've assigned 
+#    to Dashboard).
+# 2. Begin dragging the widget.
+# 3. Press F12 again, before letting up on the mouse button.
+# 4. Drop the widget wherever you want it.
+#
+# cf. http://www.mactricksandtips.com/2008/02/top-50-terminal-commands.html
+#     http://www.macosxhints.com/article.php?story=20050422172929402
+#     http://developer.apple.com/technotes/tn2005/tn2139.html#TNTAG13
+
+defaults write com.apple.dashboard devmode YES
