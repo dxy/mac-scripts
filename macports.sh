@@ -32,6 +32,7 @@ PACKAGE_LIST=(
     'scala'
     'sox'
     'splint'
+    'tree'
 )
 
 if [[ ! -x $(which port) ]]; then
