@@ -17,6 +17,7 @@ PACKAGE_LIST=(
     'lv +lesslikeslash'
     'memcached +threads'
     'mercurial +bash_completion'
+    'minicom'
     'mit-scheme'
     'ncftp'
     'nkf'
