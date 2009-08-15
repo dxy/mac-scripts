@@ -1,5 +1,6 @@
 #!/bin/bash
 # cf. http://www.mactricksandtips.com/2008/02/top-50-terminal-commands.html
+# /Library/Desktop Pictures/Plants/Grass Blades.jpg
 
 usage() {
   echo "Usage: $(basename ${0}) imagefile"
