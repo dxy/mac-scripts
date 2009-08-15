@@ -21,6 +21,7 @@ PACKAGE_LIST=(
     'mit-scheme'
     'ncftp'
     'nkf'
+    'pstree'
     'pwgen'
     'python24'
     'python25'
