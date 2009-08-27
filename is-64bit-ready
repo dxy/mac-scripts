@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# MacBook doesn't seem to support 64bit kernel
+hwprefs machine_type | grep -q 'MacBook[0-9],[0-9]'
+if [ ${?} == 0 ]; then
+  echo 'no'
+  exit 0
+fi
+
+ioreg -l -p IODeviceTree | grep firmware-abi | grep -q EFI64
+if [ ${?} == 0 ]; then
+  echo 'yes'
+fi
+
