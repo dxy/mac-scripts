@@ -22,6 +22,7 @@ PACKAGE_LIST=(
     'mit-scheme'
     'mtr'
     'ncftp'
+    'ngrep'
     'nkf'
     'proctools'
     'pstree'
