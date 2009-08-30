@@ -32,6 +32,7 @@ PACKAGE_LIST=(
     'python25'
     'python26'
     'python_select'
+    'py26-django +bash_completion'
     'py26-memcached'
     'py26-pylibmc'
     'py26-twisted'
