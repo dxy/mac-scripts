@@ -39,6 +39,7 @@ PACKAGE_LIST=(
     'py-lint'
     'ruby19 +c_api_docs'
     'scala'
+    'sipcalc'
     'sox'
     'splint'
     'tree'
