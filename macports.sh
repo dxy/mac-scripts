@@ -4,6 +4,7 @@
 PATH=/opt/local/bin:/usr/bin:/bin
 
 PACKAGE_LIST=( 
+    'arpwatch'
     'elinks +col256'
     'erlang +ssl'
     'gauche'
@@ -40,6 +41,7 @@ PACKAGE_LIST=(
     'sox'
     'splint'
     'tree'
+    'watch'
 )
 
 if [[ ! -x $(which port) ]]; then
