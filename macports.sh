@@ -42,8 +42,10 @@ PACKAGE_LIST=(
     'sipcalc'
     'sox'
     'splint'
+    'stunnel'
     'tree'
     'watch'
+    'wget'
 )
 
 if [[ ! -x $(which port) ]]; then
