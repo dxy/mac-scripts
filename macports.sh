@@ -5,11 +5,13 @@ PATH=/opt/local/bin:/usr/bin:/bin
 
 PACKAGE_LIST=( 
     'arpwatch'
+    'cscope'
     'elinks +col256'
     'erlang +ssl'
     'gauche'
     'ghc'
     'git-core +bash_completion +doc'
+    'global'
     'gnupg'
     'guile'
     'imagemagick +rsvg +gs +lcms +wmf +mpeg +jbig +jpeg2 +graphviz +hdri'
