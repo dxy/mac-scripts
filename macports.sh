@@ -39,6 +39,7 @@ PACKAGE_LIST=(
     'py26-pylibmc'
     'py26-twisted'
     'py-lint'
+    'rb-pdumpfs'
     'ruby19 +c_api_docs'
     'scala'
     'sipcalc'
