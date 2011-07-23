@@ -3,8 +3,13 @@
 
 PATH=/opt/local/bin:/usr/bin:/bin
 
+# TODO(dxy): Remove bash from there once every single Mac around me is upgraded
+# to Lion. It's there because bash on Snow Leopard is bash-3.x, which is missing
+# support for associative arrays, which is used in my .bashrc for better
+# readability and maintainability.
 PACKAGE_LIST=( 
     'arpwatch'
+    'bash'
     'cscope'
     'elinks +col256'
     'erlang +ssl'
@@ -56,15 +61,15 @@ if [[ ! -x $(which port) ]]; then
   exit 1
 fi
 
-if [[ ${EUID} -ne 0 ]]; then
+if (( "${EUID}" !=  0 )); then
   echo 'This script must be run as root.' 1>&2
   exit 1
 fi
 
 for package in "${PACKAGE_LIST[@]}"; do
   command="port install ${package}"
-  echo ${command}
-  eval ${command}
+  echo "${command}"
+  eval "${command}"
   echo ''
 done
 
