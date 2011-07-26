@@ -20,6 +20,7 @@ PACKAGE_LIST=(
     'gnupg'
     'guile'
     'imagemagick +rsvg +gs +lcms +wmf +mpeg +jbig +jpeg2 +graphviz +hdri'
+    'ipcalc'
     'javascript-lint'
     'lft'
     'lua'
