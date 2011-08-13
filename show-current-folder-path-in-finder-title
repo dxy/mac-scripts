@@ -1,5 +1,8 @@
 #!/bin/bash
 
-# Show the current path of the Finder window you're in.
-# More posixier than Path Bar.
+## Show the current path of the Finder window you're in.
+## More posixier than Path Bar.
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
+
+## For the impatient.
+# killall Finder
