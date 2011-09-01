@@ -1,0 +1,4 @@
+#!/bin/sh
+
+defaults write NSGlobalDomain NSUserKeyEquivalents \
+'{"Quit Safari" = "@$q";"Quit Terminal" = "@$q";"Quit Google Chrome" = "@$q";}'
