@@ -1,4 +1,11 @@
 #!/bin/sh
 
+# cf. http://dotjay.co.uk/2009/jan/holding-up-the-q
+# For remapping shortcuts:
+# @: Command
+# $: Shift
+# ~: Option
+# ^: Control
+
 defaults write NSGlobalDomain NSUserKeyEquivalents \
 '{"Quit Safari" = "@$q";"Quit Terminal" = "@$q";"Quit Google Chrome" = "@$q";}'
