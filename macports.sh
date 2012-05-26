@@ -42,6 +42,7 @@ PACKAGE_LIST=(
     'py27-django +bash_completion'
     'py27-lint'
     'py27-memcached'
+    'py27-pyflakes'
     'py27-pylibmc'
     'py27-pychecker'
     'py27-twisted'
@@ -74,3 +75,5 @@ for package in "${PACKAGE_LIST[@]}"; do
   echo ''
 done
 
+#TODO(dxy): maybe this script should take care of something like the following.
+#port select --set pyflakes py27-pyflakes
