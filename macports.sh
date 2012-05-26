@@ -42,6 +42,7 @@ PACKAGE_LIST=(
     'py27-django +bash_completion'
     'py27-lint'
     'py27-memcached'
+    'py27-pep8'
     'py27-pyflakes'
     'py27-pylibmc'
     'py27-pychecker'
@@ -77,3 +78,4 @@ done
 
 #TODO(dxy): maybe this script should take care of something like the following.
 #port select --set pyflakes py27-pyflakes
+#port select --set pep8 pep827
