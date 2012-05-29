@@ -1,6 +1,10 @@
 #!/bin/bash
 # Install packages of your choice with MacPorts.
 
+# Tested against MacPorts 2.1.1.
+# TODO(dxy): check 'port version' and see if there's a "big" discrepancy
+# between running version and tested version of Mac Ports.
+
 PATH=/opt/local/bin:/usr/bin:/bin
 
 # TODO(dxy): Remove bash from there once every single Mac around me is upgraded
@@ -79,3 +83,4 @@ done
 #TODO(dxy): maybe this script should take care of something like the following.
 #port select --set pyflakes py27-pyflakes
 #port select --set pep8 pep827
+#python_select python27
